@@ -4,12 +4,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   plugins: [
-    new MiniCssExtractPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-          { from: 'node_modules/@coreui/icons/sprites' }
-      ]
-  }),
+    new MiniCssExtractPlugin({
+      filename: "main.css", // Specify the output filename for the CSS
+    }),
   ],
   entry: "./src/index.js",
   output: {
@@ -32,13 +29,24 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
+          MiniCssExtractPlugin.loader, // Extract CSS into a separate file
+          "css-loader", // Translates CSS into CommonJS
+          "sass-loader", // Compiles Sass to CSS
         ],
+      },
+      {
+        test: require.resolve("jquery"),
+        loader: "expose-loader",
+        options: {
+          exposes: ["$", "jQuery"],
+        },
+      },
+      {
+        test: require.resolve("chart.js"),
+        loader: "expose-loader",
+        options: {
+          exposes: "Chart",
+        },
       },
     ],
   },
