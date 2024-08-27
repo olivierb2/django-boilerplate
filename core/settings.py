@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sbadmin2',
-    'example'
+    'sbadmin2.example'
 ]
 
 MIDDLEWARE = [
