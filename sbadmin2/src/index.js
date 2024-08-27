@@ -14,6 +14,7 @@ import "jquery-easing";
 import "startbootstrap-sb-admin-2/js/sb-admin-2.js";
 
 import "chart.js";
+import "datatables.net-bs4";
 
 // Your custom JavaScript code
 $(document).ready(function () {
