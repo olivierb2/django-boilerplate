@@ -4,4 +4,4 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 class Example(TemplateView):
-    template_name = "test.html"
+    template_name = "index.html"
