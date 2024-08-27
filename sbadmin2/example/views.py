@@ -37,3 +37,7 @@ class ExampleCharts(TemplateView):
 
 class ExampleTables(TemplateView):
     template_name = "tables.html"
+
+
+class ExampleForm(TemplateView):
+    template_name = "form.html"

@@ -17,4 +17,6 @@ urlpatterns = [
          name='example_charts'),
     path('tables/', views.ExampleTables.as_view(),
          name='example_tables'),
+    path('form/', views.ExampleForm.as_view(),
+         name='example_form'),
 ]
